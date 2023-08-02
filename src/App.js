@@ -9,15 +9,18 @@ import { useDispatch } from 'react-redux';
 function App() {
   const dispatch = useDispatch()
   const [data,setData] = useState([])
+  const centralData = (json)=>{
+    setData(json);
+    dispatch(setProductData(json))
+
+  }
   useEffect(() => {
     const fetchData = async () => {
     const Server = process.env.REACT_APP_SERVER_DOMAIN ? process.env.REACT_APP_SERVER_DOMAIN : "https://groceries-yipj.onrender.com"
         try {
             const response = await fetch(`${Server}/product`);
             const json = await response.json();
-            console.log(json)
-            dispatch(setProductData(json))
-            setData(json);
+            centralData(json)
         } catch (error) {
             console.log("error", error);
         }
