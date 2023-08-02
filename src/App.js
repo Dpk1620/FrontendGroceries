@@ -23,8 +23,12 @@ function App() {
     dispatch(setProductData(resData))
   }
   useEffect(() => {
-   fetchProduct()
-   setData(allProducts)
+  async function getData(){
+    await fetchProduct()
+
+  }
+  getData()
+  setData(allProducts)
   }, [data])
   
 
