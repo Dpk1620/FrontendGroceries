@@ -35,7 +35,7 @@ const Login = () => {
     e.preventDefault()
     const { email, password } = userDetails
     if (email && password) {
-      let server = process.env.REACT_APP_SERVER_DOMAIN?REACT_APP_SERVER_DOMAIN:"https://groceries-yipj.onrender.com"
+      let server = process.env.REACT_APP_SERVER_DOMAIN?process.env.REACT_APP_SERVER_DOMAIN:"https://groceries-yipj.onrender.com"
       const FetchData = await fetch(`${server}/login`, {
         method: "POST",
         headers: {
