@@ -23,7 +23,7 @@ function App() {
     dispatch(setProductData(resData))
   }
   useEffect(() => {
-    fetchProduct()
+    fetchProduct(data)
   }, [data])
   
 
