@@ -48,7 +48,6 @@ function App() {
         </main>
       </div>
     </>
-
   );
 }
 
