@@ -11,20 +11,21 @@ function App() {
   const [data,setData ] = useState([])
   // const allProducts = useSelector((state) => state.product)
 
-  async function fetchProduct(){
-    const Server = process.env.REACT_APP_SERVER_DOMAIN ? process.env.REACT_APP_SERVER_DOMAIN : "https://groceries-yipj.onrender.com"
-    const res = await fetch(`${Server}/product`, {
-      method: "GET",
-      headers: {
-        "content-type": "application/json"
-      },
-    })
-    const resData = await res.json()
-    setData(resData)
-    dispatch(setProductData(resData))
-  }
-  useEffect(async() => {
-   fetchProduct(data)
+ 
+  useEffect(() => {
+    async function fetchProduct(){
+      const Server = process.env.REACT_APP_SERVER_DOMAIN ? process.env.REACT_APP_SERVER_DOMAIN : "https://groceries-yipj.onrender.com"
+      const res = await fetch(`${Server}/product`, {
+        method: "GET",
+        headers: {
+          "content-type": "application/json"
+        },
+      })
+      const resData = await res.json()
+      setData(resData)
+      dispatch(setProductData(resData))
+    }
+    fetchProduct()
   }, [data])
   
 
