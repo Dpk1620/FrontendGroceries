@@ -19,13 +19,13 @@ function App() {
       },
     })
     const resData = await res.json()
-    console.log("resDaaaatttt", resData)
+   
     dispatch(setProductData(resData))
   }
   useEffect(() => {
     getProducts()
   }, [])
-  console.log(allProducts, "sdfghjsallProductsallProducts")
+  
 
   return (
     <>
