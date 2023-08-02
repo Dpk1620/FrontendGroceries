@@ -8,7 +8,7 @@ import { useDispatch } from 'react-redux';
 
 function App() {
   const dispatch = useDispatch()
-  const [data,setData ] = useState()
+  const [data,setData ] = useState([])
   // const allProducts = useSelector((state) => state.product)
 
   async function fetchProduct(){
@@ -20,12 +20,12 @@ function App() {
       },
     })
     const resData = await res.json()
-    setData(data)
+    setData(resData)
     dispatch(setProductData(resData))
   }
-  useEffect(() => {
-   fetchProduct()
-  }, [""])
+  useEffect(async() => {
+   fetchProduct(data)
+  }, [data])
   
 
   return (
