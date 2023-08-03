@@ -10,8 +10,8 @@ const Menu = () => {
   console.log("filterby",filterby)
   const dispatch = useDispatch()
   const allProducts = useSelector((state) => state.product.productList)
+  const cartItem = useSelector((state)=>state.product.cartItem)
   const showProduct = allProducts.filter(el => el._id === filterby)[0]
-  console.log("showProductddddddddddddddddddd",showProduct)
   
   const handleAddCartProduct = (e) => {
     dispatch(addCartItem(showProduct))

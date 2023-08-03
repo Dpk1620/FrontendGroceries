@@ -1,8 +1,14 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 import "../App.css"
+import { useDispatch } from 'react-redux'
+import { addCartItem } from '../redux/productSlice'
 
 const CardFeatures = ({ data }) => {
+    const dispatch = useDispatch()
+    const handleCartItem = (e) =>{
+        dispatch(addCartItem(e))
+    }
     return (
         <>
             {data.length > 0 ? data.map((data, index) =>
@@ -14,7 +20,7 @@ const CardFeatures = ({ data }) => {
                         <h3 className='font-semibold text-slate-600 capitalize text-lg mt-4'>{data.name}</h3>
                         <p className='text-slate-500 font-medium'>{data.category}</p>
                         <p className='font-bold'>₹{" "}{data.price}</p>
-                        <button className='hover:scale-105 transition-all bg-blue-300 font-bold text-sm hover:bg-green-600 hover:text-white w-full rounded-md py-0.5'>
+                        <button onClick={()=>handleCartItem(data)} className='hover:scale-105 transition-all bg-blue-300 font-bold text-sm hover:bg-green-600 hover:text-white w-full rounded-md py-0.5'>
                             Add Cart
                         </button>
                     </div>

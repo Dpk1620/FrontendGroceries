@@ -12,7 +12,8 @@ import { toast } from "react-hot-toast";
 const Header = () => {
     const [userMenu, setUserMenu] = useState(false)
     const userData = useSelector((state) => state.user)
-    console.log(userData, "userData")
+    const cartItem = useSelector((state)=>state.product.cartItem)
+    console.log(cartItem)
     const dispatch = useDispatch()
     const handleUserMenu = () => {
         setUserMenu(item => !item);
@@ -43,7 +44,7 @@ const Header = () => {
                         <Link to={"cart"}>
                             <LiaOpencart />
                             <div className="absolute -top-2 -right-1 text-white bg-red-500 h-5 w-4 rounded-full m-0 p-0  text-sm text-center  ">
-                                0</div>
+                                {cartItem?cartItem.length:0}</div>
                         </Link>
                     </div>
                     <div className="text-slate-600" onClick={handleUserMenu}>

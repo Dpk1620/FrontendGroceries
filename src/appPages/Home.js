@@ -57,10 +57,10 @@ const Home = () => {
             <span className='font-style: italic; hover:font-normal' style={{ color: color }}>Groceries
             </span></h1>
           <p className='py-3 text-md font-bold hover:text-2xl'>
-            This laptop bag is waterproof” describes a feature.
-            A benefit is the value a customer gets from a feature of the product.
-            For example,
-            “You won't need to worry about the rain anymore” describes a benefit of the bag being waterproof.
+          <span className='hover:green-600'>
+          Your needs in just one place.
+            </span>
+            “You won't need to worry about the rain anymore” Online grocery shopping made easy at bigbasket, wide range of products at best prices. Skip the queue and order from the wide range of products available at bigbasket.com. Download Mobile App. Multiple Payment Options. Sign Up Online.
           </p>
           <button className='font-bold bg-blue-400 px-3 text-slate-200  rounded-md py-1.5'>
             Order_Now
