@@ -6,7 +6,7 @@ const CardFeatures = ({ data }) => {
     return (
         <>
             {data.length > 0 ? data.map((data, index) =>
-                <Link key={index} to={`menu/${data._id}`}>
+                <Link key={index} to={`/menu/${data._id}`} onClick={()=> window.scrollTo({top:"0",behaviour:"smooth"})}>
                     <div className='w-full min-w-[200px] max-w-[200px] bg-white hover:shadow-lg drop-shadow-lg py-3 rounded-md px-2 cursor-pointer' >
                         <div className='h-28 flex flex-col justify-center items-center'>
                             <img src={data.image} alt="" className='h-full hover:scale-105 transition-all' />
@@ -19,7 +19,6 @@ const CardFeatures = ({ data }) => {
                         </button>
                     </div>
                 </Link>
-
             ) : <div className='flex justify-center items-center'>
                 <div>
                     <h2 className='font-bold text-md'>...Loading</h2>

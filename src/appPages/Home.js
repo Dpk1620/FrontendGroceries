@@ -85,7 +85,7 @@ const Home = () => {
         <CardFeatures data={filterCardProducts} />
       </div>
       <div>
-      <AllProductsList />
+      <AllProductsList  heading={"Your Product"}/>
       </div>
     </div>
   )

@@ -54,7 +54,7 @@ const SignUp = () => {
       userDetails;
     if (firstName && lastName && email && password && confirmPassword) {
       if (password === confirmPassword) {
-        let server = process.env.REACT_APP_SERVER_DOMAIN?process.env.REACT_APP_SERVER_DOMAIN:"https://groceries-yipj.onrender.com"
+        let server = process.env.REACT_APP_SERVER_DOMAIN
         const FetchData = await fetch(`${server}/signup`, {
           method: "POST",
           headers: {

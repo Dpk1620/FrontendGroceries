@@ -2,32 +2,32 @@ import './App.css';
 import Header from './components/header';
 import { Outlet } from "react-router-dom"
 import { Toaster } from 'react-hot-toast';
-import { useEffect, useState } from 'react';
+import { useEffect } from 'react';
 import { setProductData } from './redux/productSlice';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 
 function App() {
   const dispatch = useDispatch()
-  const [data,setData] = useState([])
-  const centralData = (json)=>{
-    setData(json);
-    dispatch(setProductData(json))
+  const allProducts = useSelector((state) => state.product)
 
+  const getProducts = async () => {
+    const Server = process.env.REACT_APP_SERVER_DOMAIN ? process.env.REACT_APP_SERVER_DOMAIN : "http://localhost:8080"
+    const res = await fetch(`${Server}/product`, {
+      method: "GET",
+      headers: {
+        "content-type": "application/json"
+      },
+    })
+    const resData = await res.json()
+    console.log("resDaaaatttt", resData)
+    dispatch(setProductData(resData))
   }
   useEffect(() => {
-    const fetchData = async () => {
-    const Server = process.env.REACT_APP_SERVER_DOMAIN ? process.env.REACT_APP_SERVER_DOMAIN : "https://groceries-yipj.onrender.com"
-        try {
-            const response = await fetch(`${Server}/product`);
-            const json = await response.json();
-            centralData(json)
-        } catch (error) {
-            console.log("error", error);
-        }
-    }
-    fetchData()
-  },[]);
-
+    const getValue = () =>getProducts()
+    getValue()
+    // eslint-disable-next-line
+  }, [])
+  console.log(allProducts, "sdfghjsallProductsallProducts")
 
   return (
     <>

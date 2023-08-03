@@ -2,13 +2,16 @@ import React from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { useParams } from 'react-router-dom'
 import { addCartItem } from "../redux/productSlice";
+import AllProductsList from '../components/allProductsList';
 import "../App.css"
 
 const Menu = () => {
   const { filterby } = useParams()
+  console.log("filterby",filterby)
   const dispatch = useDispatch()
   const allProducts = useSelector((state) => state.product.productList)
   const showProduct = allProducts.filter(el => el._id === filterby)[0]
+  console.log("showProductddddddddddddddddddd",showProduct)
   
   const handleAddCartProduct = (e) => {
     dispatch(addCartItem(showProduct))
@@ -47,8 +50,7 @@ const Menu = () => {
         </div>
       </div>
     </div>
-
-    {/* <AllProduct heading={"Related Product"}/> */}
+    <AllProductsList heading={"Related Product"}/>
   </div>
      
   )
