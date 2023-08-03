@@ -4,12 +4,10 @@ import { Outlet } from "react-router-dom"
 import { Toaster } from 'react-hot-toast';
 import { useEffect } from 'react';
 import { setProductData } from './redux/productSlice';
-import { useDispatch, useSelector } from 'react-redux';
+import { useDispatch } from 'react-redux';
 
 function App() {
   const dispatch = useDispatch()
-  const allProducts = useSelector((state) => state.product)
-
   const getProducts = async () => {
     const Server = process.env.REACT_APP_SERVER_DOMAIN ? process.env.REACT_APP_SERVER_DOMAIN : "https://groceries-yipj.onrender.com"
     const res = await fetch(`${Server}/product`, {
