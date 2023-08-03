@@ -11,7 +11,7 @@ function App() {
   const allProducts = useSelector((state) => state.product)
 
   const getProducts = async () => {
-    const Server = process.env.REACT_APP_SERVER_DOMAIN ? process.env.REACT_APP_SERVER_DOMAIN : "http://localhost:8080"
+    const Server = process.env.REACT_APP_SERVER_DOMAIN ? process.env.REACT_APP_SERVER_DOMAIN : "https://groceries-yipj.onrender.com"
     const res = await fetch(`${Server}/product`, {
       method: "GET",
       headers: {
@@ -27,7 +27,6 @@ function App() {
     getValue()
     // eslint-disable-next-line
   }, [])
-  console.log(allProducts, "sdfghjsallProductsallProducts")
 
   return (
     <>

@@ -23,7 +23,7 @@ const NewProducts = () => {
   }
   const handleOnSubmit = async (e) => {
     e.preventDefault()
-    const Server = process.env.REACT_APP_SERVER_DOMAIN
+    const Server = process.env.REACT_APP_SERVER_DOMAIN?process.env.REACT_APP_SERVER_DOMAIN:"https://groceries-yipj.onrender.com"
     const { name, price, category, image, description } = data
     if (name && price && category && image && description) {
       const fetchData = await fetch(`${Server}/createproduct`, {
