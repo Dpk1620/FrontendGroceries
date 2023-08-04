@@ -5,6 +5,7 @@ import { ImagetoBase64 } from "../converter/Base64Image";
 import { toast } from "react-hot-toast"
 
 const SignUp = () => {
+  document.title ="Groceries - REGISTER" 
   const navigate = useNavigate();
   const [passwordIcon, setPasswordIcon] = useState(false);
   const [confirmPasswordIcon, setConfirmPasswordIcon] = useState(false);

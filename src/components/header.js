@@ -28,7 +28,7 @@ const Header = () => {
 
             <div className="flex items-center h-full justify-between">
                 <Link to={""}>
-                    <div className="h-12">
+                    <div className="innnerDivClass h-12" style={{position:"relative"}}>
                         <img src={Logo} className="h-full" alt="" />
                     </div>
                 </Link>
@@ -43,8 +43,9 @@ const Header = () => {
                     <div className="text-3xl text-slate-600 relative">
                         <Link to={"cart"}>
                             <LiaOpencart />
-                            <div className="absolute -top-2 -right-1 text-white bg-red-500 h-5 w-4 rounded-full m-0 p-0  text-sm text-center  ">
-                                {cartItem?cartItem.length:0}</div>
+                            {cartItem.length>0? <div className="absolute -top-2 -right-1 text-white bg-red-500 h-5 w-4 rounded-full m-0 p-0  text-sm text-center  ">
+                              {cartItem.length}  </div>:""}
+                           
                         </Link>
                     </div>
                     <div className="text-slate-600" onClick={handleUserMenu}>

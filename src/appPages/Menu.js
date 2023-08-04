@@ -20,6 +20,7 @@ const Menu = () => {
     dispatch(addCartItem(showProduct))
       // navigate("/cart")
   }
+  document.title ="Groceries - MENU" 
   return (
     <div className="p-2 md:p-4">
     <div className="w-full max-w-3xl m-auto md:flex bg-white justify-center">

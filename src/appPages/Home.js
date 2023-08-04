@@ -40,6 +40,7 @@ const Home = () => {
 
  
   useEffect(() => {
+    document.title ="Groceries - HOME" 
     const timerID = setInterval(() => tick(), 4000)
     return () => {
       clearInterval(timerID)
@@ -64,11 +65,11 @@ const Home = () => {
             </span>
             “You won't need to worry about the rain anymore” Online grocery shopping made easy at bigbasket, wide range of products at best prices. Skip the queue and order from the wide range of products available at bigbasket.com. Download Mobile App. Multiple Payment Options. Sign Up Online.
           </p>
-          <button className='font-bold bg-blue-400 px-3 text-slate-200  rounded-md py-1.5'>
+          <button className='orderNowBtn font-bold bg-blue-400 px-3 text-slate-200  rounded-md py-1.5'>
             Order_Now
           </button>
         </div>
-        <div className="md:w-1/2 flex flex-wrap gap-5 p-4 justify-center">
+        <div className="md:w-1/2 flex flex-wrap gap-5 p-4 justify-center InnerDivClass">
           {cardProductsOnPage[0]
             ? cardProductsOnPage.map((el) => {
                 return (

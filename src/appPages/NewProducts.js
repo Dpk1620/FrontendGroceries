@@ -77,7 +77,7 @@ const NewProducts = () => {
           <option value="Dairy">Dairy</option>
         </select>
         <label htmlFor='image' className='hover:font-bold mt-1'>Image
-          <div className='w-full h-40 bg-slate-200 rounded flex cursor-pointer items-center justify-center'>
+          <div className='w-full h-40 bg-slate-200 rounded  flex cursor-pointer items-center justify-center'>
             {data.image ?
               <img src={data.image} className='h-full' alt="" />
               : <span className='text-5xl hover:text-2xl'>

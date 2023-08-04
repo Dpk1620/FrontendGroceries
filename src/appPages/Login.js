@@ -6,6 +6,7 @@ import { toast } from 'react-hot-toast'
 import { useDispatch } from 'react-redux'
 import { loginRedux } from '../redux/userSlice'
 const Login = () => {
+  document.title ="Groceries - LOGIN" 
   const navigate = useNavigate();
   const [passwordIcon, setPasswordIcon] = useState(false)
   const [userDetails, setUserDetails] = useState({
