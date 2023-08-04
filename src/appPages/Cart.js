@@ -30,7 +30,7 @@ const Cart = () => {
           </div>
           :   <>
           <div className="flex w-full justify-center items-center flex-col">
-            <img src={""} className="w-full max-w-sm"/>
+            <img src={""} className="w-full max-w-sm" alt=""/>
             <p className="text-slate-500 text-3xl font-bold">Empty Cart</p>
           </div>
         </>}
