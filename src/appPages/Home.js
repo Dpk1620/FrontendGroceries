@@ -69,7 +69,7 @@ const Home = () => {
             Order_Now
           </button>
         </div>
-        <div className="md:w-1/2 flex flex-wrap gap-5 p-4 justify-center InnerDivClass">
+        <div className="md:w-1/2 flex flex-wrap gap-5 p-4 justify-center">
           {cardProductsOnPage[0]
             ? cardProductsOnPage.map((el) => {
                 return (

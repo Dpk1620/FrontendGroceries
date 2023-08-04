@@ -22,9 +22,9 @@ const Menu = () => {
   }
   document.title ="Groceries - MENU" 
   return (
-    <div className="p-2 md:p-4">
+    <div className="p-2 md:p-4 ">
     <div className="w-full max-w-3xl m-auto md:flex bg-white justify-center">
-      <div className="max-w-sm max-h-sm  overflow-hidden w-full p-5">
+      <div className="max-w-sm max-h-sm  overflow-hidden  w-full p-5">
         <img
           src={showProduct.image}
           className="rotatenewClass"
