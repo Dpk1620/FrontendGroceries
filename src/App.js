@@ -28,7 +28,7 @@ function App() {
 
   return (
     <>
-      <Toaster />
+      <Toaster position="top-center" reverseOrder={true}/>
       <div >
         <Header />
         <main className='pt-16 bg-rose-50 min-h-[calc(100vh)]'>

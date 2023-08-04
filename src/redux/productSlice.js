@@ -1,5 +1,6 @@
 import {createSlice} from "@reduxjs/toolkit"
 import { toast } from "react-hot-toast"
+import "../App.css"
 const initialState ={productList: []
 ,
 cartItem:[],
@@ -13,11 +14,26 @@ export const productSlice = createSlice({
         },
         addCartItem: (state, action) => {
             const justifyItem = state.cartItem.some((el) => el._id === action.payload._id);
-            console.log(justifyItem,"justifyItem",action.payload._id)
             if (justifyItem) {
-              toast("Already Item in Cart");
+                toast.error("Already added in card",{
+                    style: {
+                      border: '1px solid red',
+                      padding: '16px',
+                      color: 'red',
+                    },
+                  })
             } else {
-              toast("Item Add successfully");
+              toast.success("Already added in card",{
+                style: {
+                  border: '1px solid green',
+                  padding: '16px',
+                  color: 'green',
+                },
+                iconTheme: {
+                  primary: 'green',
+                  secondary: '#FFFAEE',
+                },
+              })
               const total = action.payload.price;
               state.cartItem = [
                 ...state.cartItem,
@@ -29,7 +45,13 @@ export const productSlice = createSlice({
              console.log(action)
              const index = state.cartItem.findIndex((el)=> el._id === action.payload)
              state.cartItem.splice(index,1)
-             toast("Item Deleted Successfully")
+             toast.error("Item Deleted Successfully",{
+                style: {
+                  border: '1px solid red',
+                  padding: '16px',
+                  color: 'red',
+                },
+              })
         },
         increaseQty: (state, action) => {
             const index = state.cartItem.findIndex((el) => el._id === action.payload);
@@ -39,6 +61,13 @@ export const productSlice = createSlice({
             const price = state.cartItem[index].price;
             const total = price * qtyInc;
             state.cartItem[index].total = total;
+            toast.success("Added successfully",{
+                style: {
+                  border: '1px solid red',
+                  padding: '16px',
+                  color: 'red',
+                },
+              })
           },
           decreaseQty: (state, action) => {
             const index = state.cartItem.findIndex((el) => el._id === action.payload);
@@ -49,11 +78,24 @@ export const productSlice = createSlice({
               const price = state.cartItem[index].price;
               const total = price * qtyDec;
               state.cartItem[index].total = total;
+              toast.error("Remove successfully",{
+                style: {
+                  border: '1px solid red',
+                  padding: '16px',
+                  color: 'red',
+                },
+              })
             }
             else {
-                console.log("called")
                 const index = state.cartItem.findIndex((el)=> el._id === action.payload)
                 state.cartItem.splice(index,1)
+                toast.error("Remove Item From Cart",{
+                    style: {
+                      border: '1px solid red',
+                      padding: '16px',
+                      color: 'red',
+                    },
+                  })
             }
           },
     }

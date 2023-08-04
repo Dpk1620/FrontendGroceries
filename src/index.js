@@ -13,12 +13,10 @@ import NewProducts from './appPages/NewProducts';
 import SignUp from './appPages/SignUp';
 import {store} from "./redux/config";
 import { Provider } from 'react-redux';
-import { ToastContainer } from 'react-toastify';
 
 
 const Router = createBrowserRouter(
   createRoutesFromElements(
-    
     <Route path='/' element={<App/>}>
       <Route  index element={<Home/>}/>
       <Route  path='menu/:filterby' element={<Menu/>}/>
@@ -35,12 +33,6 @@ const Router = createBrowserRouter(
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <Provider store={store}>
-     <ToastContainer
-        autoClose={2000}
-        position="top-center"
-        className="toast-container"
-        toastClassName="dark-toast"
-      />
     <RouterProvider router={Router}/>
   </Provider>
 );
