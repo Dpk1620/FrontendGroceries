@@ -5,6 +5,9 @@ import { Toaster } from 'react-hot-toast';
 import { useEffect } from 'react';
 import { setProductData } from './redux/productSlice';
 import { useDispatch } from 'react-redux';
+import { Translation } from "react-i18next";
+
+
 
 function App() {
   const dispatch = useDispatch()
@@ -21,20 +24,24 @@ function App() {
     dispatch(setProductData(resData))
   }
   useEffect(() => {
-    const getValue = () =>getProducts()
+    const getValue = () => getProducts()
     getValue()
     // eslint-disable-next-line
   }, [])
 
   return (
     <>
-      <Toaster position="top-center" reverseOrder={true}/>
-      <div >
-        <Header />
-        <main className='pt-16 bg-rose-50 min-h-[calc(100vh)]'>
-          <Outlet />
-        </main>
-      </div>
+      <Translation>{t => <>
+        <Toaster position="top-center" reverseOrder={true} />
+        <div >
+          <Header t={t} />
+          <main className='pt-16 bg-rose-50 min-h-[calc(100vh)]'>
+            <Outlet />
+          </main>
+        </div>
+      </>
+      }
+      </Translation>
     </>
 
   );

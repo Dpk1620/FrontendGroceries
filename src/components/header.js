@@ -8,8 +8,10 @@ import { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { logoutRedux } from "../redux/userSlice";
 import { toast } from "react-hot-toast";
+import ChangeLang from "./ChangeLang";
 
-const Header = () => {
+
+const Header = ({t}) => {
     const [userMenu, setUserMenu] = useState(false)
     const userData = useSelector((state) => state.user)
     const cartItem = useSelector((state)=>state.product.cartItem)
@@ -35,10 +37,11 @@ const Header = () => {
 
                 <div className="flex items-center gap-4 md:gap-7">
                     <nav className="gap-4 md:gap-6 text-base md:text-lg hidden md:flex">
-                        <Link to={""}>Home</Link>
-                        <Link to={"menu/64c90e73a64b74aa5949c91d"}>Menu</Link>
-                        <Link to={"about"}>About</Link>
-                        <Link to={"contact"}>Contact</Link>
+                        <Link to={""}>{t("Home")}</Link>
+                        <Link to={"menu/64c90e73a64b74aa5949c91d"}>{t("Menu")}</Link>
+                        <Link to={"about"}>{t("About")}</Link>
+                        <Link to={"contact"}>{t("Contact")}</Link>
+                         <ChangeLang t={t} />
                     </nav>
                     <div className="text-3xl text-slate-600 relative">
                         <Link to={"cart"}>

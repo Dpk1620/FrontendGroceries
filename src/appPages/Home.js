@@ -5,7 +5,7 @@ import { useSelector } from 'react-redux'
 import CardFeatures from "../components/CardFeatures"
 import { GrNext, GrPrevious } from 'react-icons/gr'
 import AllProductsList from "../components/allProductsList"
-const Home = () => {
+const Home = ({t}) => {
   const allProducts = useSelector((state) => state.product.productList)
   const cardProductsOnPage = allProducts.filter(el=>el.category ==="Fruits").slice(2,6)
   const [color, setColor] = useState()
