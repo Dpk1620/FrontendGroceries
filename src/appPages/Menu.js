@@ -7,10 +7,9 @@ import "../App.css"
 
 const Menu = () => {
   const { filterby } = useParams()
-  console.log("filterby",filterby)
   const dispatch = useDispatch()
   const allProducts = useSelector((state) => state.product.productList)
-  const cartItem = useSelector((state)=>state.product.cartItem)
+  // const cartItem = useSelector((state)=>state.product.cartItem)
   const showProduct = allProducts.filter(el => el._id === filterby)[0]
   
   const handleAddCartProduct = (e) => {

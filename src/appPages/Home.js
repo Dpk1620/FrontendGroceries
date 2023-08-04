@@ -34,6 +34,8 @@ const Home = () => {
 
   }
   //
+  const loadingArray = new Array(4).fill(null);
+  const loadingArrayFeature = new Array(10).fill(null);
  
 
  
@@ -66,11 +68,24 @@ const Home = () => {
             Order_Now
           </button>
         </div>
-        <div className='md:w-1/2 flex flex-wrap gap-5 p-4 justify-center'>
-          <Card data={cardProductsOnPage} color={color}
-          />
+        <div className="md:w-1/2 flex flex-wrap gap-5 p-4 justify-center">
+          {cardProductsOnPage[0]
+            ? cardProductsOnPage.map((el) => {
+                return (
+                  <Card
+                    key={el._id}
+                    id={el._id}
+                    image={el.image}
+                    name={el.name}
+                    price={el.price}
+                    category={el.category}
+                  />
+                );
+              })
+            : loadingArray.map((el, index) => {
+                return <Card key={index+"loading"} loading={"Loading..."} />;
+              })}
         </div>
-
       </div>
       <div className='flex w-full items-center'>
         <h2 className='font-bold text-2xl text-slate-800'>Fruits</h2>
@@ -82,7 +97,22 @@ const Home = () => {
 
       </div>
       <div className='flex gap-5 p-2 overflow-scroll  scrollbar-none scroll-smooth transition-all' ref={slideProductRef}>
-        <CardFeatures data={filterCardProducts} />
+      {filterCardProducts[0]
+            ? filterCardProducts.map((el) => {
+                return (
+                  <CardFeatures
+                    key={el._id+"vegetable"}
+                    id={el._id}
+                    name={el.name}
+                    category={el.category}
+                    price={el.price}
+                    image={el.image}
+                  />
+                );
+              })
+            : loadingArrayFeature.map((el,index) => (
+                <CardFeatures loading="Loading..." key={index+"cartLoading"} />
+              ))}
       </div>
       <div>
       <AllProductsList  heading={"Your Product"}/>
