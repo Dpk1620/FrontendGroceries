@@ -5,6 +5,7 @@ import { useSelector } from 'react-redux'
 import CardFeatures from "../components/CardFeatures"
 import { GrNext, GrPrevious } from 'react-icons/gr'
 import AllProductsList from "../components/allProductsList"
+import { Translation } from 'react-i18next'
 const Home = ({t}) => {
   const allProducts = useSelector((state) => state.product.productList)
   const cardProductsOnPage = allProducts.filter(el=>el.category ==="Fruits").slice(2,6)
@@ -47,6 +48,7 @@ const Home = ({t}) => {
     }
   }, [allProducts])
   return (
+    <Translation>{t => 
     <div className='p-2 md:p-4'>
       <div className='md:flex gap-4 py-2'>
         <div className='md:w-1/2'>
@@ -56,14 +58,14 @@ const Home = ({t}) => {
             <TbTruckDelivery className="h-7 w-7" style={{ color: color }} />
             </div>
           </div>
-          <h1 className='text-4xl md:text-7xl font-bold py-4'>Make your Today, Use your{" "}
-            <span className='font-style: italic; hover:font-normal' style={{ color: color }}>Groceries
+          <h1 className='text-4xl md:text-7xl font-bold py-4'>{t("HomeTitle1")}{" "}
+            <span className='font-style: italic; hover:font-normal py-4' style={{ color: color }}>{t("Groceries")}
             </span></h1>
           <p className='py-3 text-md font-bold hover:text-2xl'>
           <span className='hover:green-600'>
-          Your needs in just one place.
+         {t("HomeTitle2")}
             </span>
-            “You won't need to worry about the rain anymore” Online grocery shopping made easy at bigbasket, wide range of products at best prices. Skip the queue and order from the wide range of products available at bigbasket.com. Download Mobile App. Multiple Payment Options. Sign Up Online.
+            {t("HomeSubtitle")}
           </p>
           <button className='orderNowBtn font-bold bg-blue-400 px-3 text-slate-200  rounded-md py-1.5'>
             Order_Now
@@ -119,6 +121,7 @@ const Home = ({t}) => {
       <AllProductsList  heading={"Your Product"}/>
       </div>
     </div>
+}</Translation>
   )
 }
 

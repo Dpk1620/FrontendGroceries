@@ -9,9 +9,11 @@ import { useDispatch, useSelector } from "react-redux";
 import { logoutRedux } from "../redux/userSlice";
 import { toast } from "react-hot-toast";
 import ChangeLang from "./ChangeLang";
+import { Translation } from "react-i18next";
 
 
-const Header = ({t}) => {
+
+const Header = () => {
     const [userMenu, setUserMenu] = useState(false)
     const userData = useSelector((state) => state.user)
     const cartItem = useSelector((state)=>state.product.cartItem)
@@ -25,6 +27,7 @@ const Header = ({t}) => {
         toast("Logout successFully")
     }
     return (
+        <Translation>{t => 
         <header className="fixed shadow-md w-full h-16 px-2 md:px-4 z-50 bg-slate-50">
             {/* desktop */}
 
@@ -78,6 +81,7 @@ const Header = ({t}) => {
                 </div>
             </div>
         </header>
+}</Translation>
     );
 };
 

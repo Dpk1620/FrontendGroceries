@@ -1,6 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
+import i18n from "../src/converter/LangConfig";
 import App from './App';
 import {createBrowserRouter,createRoutesFromElements,Route,RouterProvider} from "react-router-dom";
 import Menu from './appPages/Menu';
