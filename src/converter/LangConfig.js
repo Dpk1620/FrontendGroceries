@@ -33,6 +33,9 @@ i18n.use(initReactI18next).init({
                 Menu: "பட்டியல்",
                 Contact: "Contact",
                 About: "About",
+                Groceries:"Groceries",
+                HomeTitle1:"Make your Today, Use your",
+
                 HomeTitle2: "Your needs in just one place .",
                 HomeSubtitle: ".“You won't need to worry about the rain anymore” Online grocery shopping made easy at groceriesmine, wide range of products at best prices. Skip the queue and order from the wide range of products available at groceriesmine.com. Download Mobile App. Multiple Payment Options. Sign Up Online."
             }
@@ -43,6 +46,9 @@ i18n.use(initReactI18next).init({
                 Menu: "Menú",
                 Contact: "Contacto",
                 About: "Acerca de",
+                Groceries:"Groceries",
+                HomeTitle1:"Make your Today, Use your",
+
                 HomeTitle: "",
                 HomeSubtitle: "Your needs in just one place.“You won't need to worry about the rain anymore” Online grocery shopping made easy at groceriesmine, wide range of products at best prices. Skip the queue and order from the wide range of products available at groceriesmine.com. Download Mobile App. Multiple Payment Options. Sign Up Online."
             }
@@ -53,7 +59,9 @@ i18n.use(initReactI18next).init({
                 Menu: "మెను",
                 Contact: "Contact",
                 About: "About",
+                Groceries:"Groceries",
                 HomeTitle: "",
+                HomeTitle1:"Make your Today, Use your",
                 HomeSubtitle: "Your needs in just one place.“You won't need to worry about the rain anymore” Online grocery shopping made easy at groceriesmine, wide range of products at best prices. Skip the queue and order from the wide range of products available at groceriesmine.com. Download Mobile App. Multiple Payment Options. Sign Up Online."
             }
         }
