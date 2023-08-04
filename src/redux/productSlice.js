@@ -23,7 +23,7 @@ export const productSlice = createSlice({
                     },
                   })
             } else {
-              toast.success("Already added in card",{
+              toast.success("Item added in card",{
                 style: {
                   border: '1px solid green',
                   padding: '16px',
@@ -63,9 +63,9 @@ export const productSlice = createSlice({
             state.cartItem[index].total = total;
             toast.success("Added successfully",{
                 style: {
-                  border: '1px solid red',
+                  border: '1px solid green',
                   padding: '16px',
-                  color: 'red',
+                  color: 'green',
                 },
               })
           },
