@@ -15,7 +15,6 @@ const CardFeatures = ({ image, name, price, category, loading, id }) => {
               image : image
             }))
     }
-    
     return (
         <>
                <div className="w-full borderImageAnimation min-w-[200px] max-w-[200px] bg-white hover:shadow-lg drop-shadow-lg py-5 px-4 cursor-pointer flex flex-col ">
