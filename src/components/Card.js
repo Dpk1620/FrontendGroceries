@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom'
 const Card = ({ name, image, category, price, loading, id }) => {
     return (
         <>
-            <div className=" bg-white shadow-md p-2 borderImageAnimation rounded min-w-[150px]">
+            <div className=" bg-white shadow-md p-2 rounded min-w-[140px]">
                 {name ? (
                     <>
                         <Link to={`/menu/${id}`} onClick={() => window.scrollTo({ top: "0", behavior: "smooth" })} >
