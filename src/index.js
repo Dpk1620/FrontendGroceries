@@ -13,6 +13,7 @@ import NewProducts from './appPages/NewProducts';
 import SignUp from './appPages/SignUp';
 import {store} from "./redux/config";
 import { Provider } from 'react-redux';
+import { ThemeProvider } from "@material-tailwind/react";
 
 
 const Router = createBrowserRouter(
@@ -33,6 +34,8 @@ const Router = createBrowserRouter(
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <Provider store={store}>
+    <ThemeProvider>
     <RouterProvider router={Router}/>
+    </ThemeProvider>
   </Provider>
 );

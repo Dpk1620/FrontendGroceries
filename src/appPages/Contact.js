@@ -4,7 +4,9 @@ const Contact = () => {
   document.title ="Groceries - CONTACT" 
 
   return (
-    <div>Contact</div>
+    <div>
+      contact
+    </div>
   )
 }
 

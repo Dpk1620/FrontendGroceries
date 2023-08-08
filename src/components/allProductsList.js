@@ -35,7 +35,7 @@ const AllProductsList = ({heading}) => {
             );
           })
         ) : (
-          <div className="min-h-[150px] flex justify-center items-center">
+          <div className="min-h-[150px]  flex justify-center items-center">
             <p>Loading...</p>
           </div>
         )}

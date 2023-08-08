@@ -5,6 +5,7 @@ import { Toaster } from 'react-hot-toast';
 import { useEffect } from 'react';
 import { setProductData } from './redux/productSlice';
 import { useDispatch } from 'react-redux';
+import Footer from './components/Footer';
 
 
 
@@ -31,11 +32,12 @@ function App() {
   return (
     <>
         <Toaster position="top-center" reverseOrder={true} />
-        <div >
+        <div className='overflow-hidden'>
           <Header />
           <main className='pt-16 bg-rose-50 min-h-[calc(100vh)]'>
             <Outlet />
           </main>
+          <Footer/>
         </div>
       </>
 

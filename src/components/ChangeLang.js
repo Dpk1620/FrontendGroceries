@@ -6,19 +6,19 @@ const ChangeLang = () => {
     const dispatch = useDispatch()
     const [selectlanguage, setLanguageData] = useState("")
     const langChange = (e) => {
+      console.log("language select",e.target.value,selectlanguage)
         setLanguageData(e.target.value)
-        console.log("language select",e.target.value)
-        dispatch(setLanguage(e.target.value))
-        i18n.changeLanguage(e.target.value)
+        dispatch(setLanguage(selectlanguage))
+        i18n.changeLanguage(selectlanguage)
       };
 return (
     <div>
       <select
         onChange={langChange}
         name="lang"
-        value={selectlanguage.lang}
+        value={selectlanguage}
       >
-        <option value="selectlanguage">
+        <option value="select">
           select language
         </option>
         <option value="en">
