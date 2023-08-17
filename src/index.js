@@ -14,6 +14,7 @@ import SignUp from './appPages/SignUp';
 import {store} from "./redux/config";
 import { Provider } from 'react-redux';
 import { ThemeProvider } from "@material-tailwind/react";
+import 'react-chatbot-kit/build/main.css'
 
 
 const Router = createBrowserRouter(

@@ -6,6 +6,10 @@ import { useEffect } from 'react';
 import { setProductData } from './redux/productSlice';
 import { useDispatch } from 'react-redux';
 import Footer from './components/Footer';
+// import Chatbot from 'react-chatbot-kit';
+// import ActionProvider from './chatbot/ActionProvider';
+// import MessageParser from './chatbot/MessageParser';
+// import config from './chatbot/config';
 
 
 
@@ -32,13 +36,17 @@ function App() {
   return (
     <>
         <Toaster position="top-center" reverseOrder={true} />
-        <div className='overflow-hidden'>
+        <div className='overflow-visible'>
           <Header />
           <main className='pt-16 bg-rose-50 min-h-[calc(100vh)]'>
+            {/* <div className='chatbotDesign'>
+        <Chatbot  config={config} actionProvider={ActionProvider}  messageParser={MessageParser}/>
+            </div> */}
             <Outlet />
           </main>
           <Footer/>
         </div>
+
       </>
 
   );

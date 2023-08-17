@@ -31,8 +31,8 @@ const CardFeatures = ({ image, name, price, category, loading, id }) => {
             <h3 className="font-semibold text-slate-600  capitalize text-lg mt-4 whitespace-nowrap overflow-hidden">
               {name}
             </h3>
-            <p className=" text-slate-500  font-medium">{category}</p>
-            <p className=" font-bold">
+            <p className="text-slate-500  font-medium">{category}</p>
+            <p className="font-bold">
               <span className="text-red-500">₹</span>
               <span>{price}</span>
             </p>
